@@ -22,7 +22,7 @@ gem 'pry'
 gem 'omniauth'
 gem 'dotenv-rails'
 gem 'omniauth-facebook'
-
+# gem 'sprockets', '~>3.0'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
