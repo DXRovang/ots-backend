@@ -1,53 +1,56 @@
 class InstrumentsController < ApplicationController
-  before_action(:require_login)
+  # before_action(:require_login)
   before_action :set_instrument, only: [:show, :edit, :update, :destroy]
   
     def index
-      @instruments = Instrument.all
+      instruments = Instrument.all
+      render json: instruments
     end
   
-    def new
-      @instrument = Instrument.new 
-      @family = Family.find_by(id: params[:family_id])
-    end
+    # def new
+    #   @instrument = Instrument.new 
+    #   @family = Family.find_by(id: params[:family_id])
+    # end
   
-    def create 
-      @instrument = Instrument.new(instrument_params)
-      @instrument.user_id = current_user.id
-      if @instrument.save 
-        redirect_to instrument_path(@instrument)
-      else
-        @family = Family.find_by(id: instrument_params[:family_id])
-        render :new
-      end
-    end
+    # def create 
+    #   @instrument = Instrument.new(instrument_params)
+    #   @instrument.user_id = current_user.id
+    #   if @instrument.save 
+    #     redirect_to instrument_path(@instrument)
+    #   else
+    #     @family = Family.find_by(id: instrument_params[:family_id])
+    #     render :new
+    #   end
+    # end
   
     def show
-     @instrument = Instrument.find_by(id: params[:id])
+      # binding.pry
+     instrument = Instrument.find_by(id: params[:id])
+     render json: instrument
     end
   
-    def edit
-      if @instrument.user_id != current_user.id
-        redirect_to instruments_path
-      else
-        @family = Family.find_by(id: @instrument.family_id)
-      end
-    end
+    # def edit
+    #   if @instrument.user_id != current_user.id
+    #     redirect_to instruments_path
+    #   else
+    #     @family = Family.find_by(id: @instrument.family_id)
+    #   end
+    # end
   
-    def update
-      @instrument.update(instrument_params)
-      redirect_to instrument_path(@instrument)
-    end
+    # def update
+    #   @instrument.update(instrument_params)
+    #   redirect_to instrument_path(@instrument)
+    # end
   
-    def destroy
+    # def destroy
      
-      if @instrument.user_id != current_user.id
-        redirect_to instruments_path
-      else
-        @instrument.destroy
-        redirect_to instruments_path
-      end
-    end
+    #   if @instrument.user_id != current_user.id
+    #     redirect_to instruments_path
+    #   else
+    #     @instrument.destroy
+    #     redirect_to instruments_path
+    #   end
+    # end
   
     private
   
