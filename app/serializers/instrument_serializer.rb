@@ -16,4 +16,8 @@ class InstrumentSerializer < ActiveModel::Serializer
   :family_id,
   :category_id
 
+  belongs_to :user
+  belongs_to :category
+  belongs_to :maker
+  belongs_to :family
 end
