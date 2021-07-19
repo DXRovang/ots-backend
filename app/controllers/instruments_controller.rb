@@ -12,16 +12,16 @@ class InstrumentsController < ApplicationController
     #   @family = Family.find_by(id: params[:family_id])
     # end
   
-    # def create 
-    #   @instrument = Instrument.new(instrument_params)
-    #   @instrument.user_id = current_user.id
-    #   if @instrument.save 
-    #     redirect_to instrument_path(@instrument)
-    #   else
-    #     @family = Family.find_by(id: instrument_params[:family_id])
-    #     render :new
-    #   end
-    # end
+    def create 
+      instrument = Instrument.new(instrument_params)
+      # instrument.user_id = current_user.id
+      if instrument.save 
+        render json: instruments
+      else
+        # @family = Family.find_by(id: instrument_params[:family_id])
+        render json: instruments
+      end
+    end
   
     def show
       # binding.pry
