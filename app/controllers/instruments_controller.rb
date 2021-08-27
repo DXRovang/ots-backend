@@ -13,7 +13,13 @@ class InstrumentsController < ApplicationController
     # end
   
     def create 
+      # binding.pry
       instrument = Instrument.new(instrument_params)
+      instrument.family_id = Family.find_by(name: params[:family]).id
+      instrument.category_id = Category.find_by(name: params[:category]).id
+      instrument.maker_id = Maker.find_by(name: params[:maker]).id
+      instrument.user_id = params[:user]
+      # binding.pry
       # instrument.user_id = current_user.id
       if instrument.save 
         render json: instruments
@@ -72,9 +78,10 @@ class InstrumentsController < ApplicationController
         :bridge, 
         :description,  
         :for_sale,
-        :category_id,
-        :family_id,
-        :maker_name,
+        :category,
+        :family,
+        :maker,
+        :user
       )
     end
   end
