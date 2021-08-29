@@ -1,4 +1,4 @@
-class MakersController < ApplicationController
+class Api::V1::MakersController < ApplicationController
   def index
     makers = Maker.all
     render json: makers

@@ -1,4 +1,4 @@
-class InstrumentsController < ApplicationController
+class Api::V1::InstrumentsController < ApplicationController
   # before_action(:require_login)
   before_action :set_instrument, only: [:show, :edit, :update, :destroy]
   
