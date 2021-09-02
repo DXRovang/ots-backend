@@ -1,4 +1,6 @@
-class InstrumentSerializer < ActiveModel::Serializer
+class InstrumentSerializer 
+  # < ActiveModel::Serializer
+  include FastJsonapi::ObjectSerializer
   attributes :id, 
   :price, 
   :year, 

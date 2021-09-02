@@ -23,6 +23,7 @@ gem 'omniauth'
 gem 'dotenv-rails'
 gem 'omniauth-facebook'
 gem 'active_model_serializers'
+gem 'fast_jsonapi'
 # gem 'sprockets', '~>3.0'
 
 # Use Active Storage variant
