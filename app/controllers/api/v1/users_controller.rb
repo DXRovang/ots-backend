@@ -25,6 +25,8 @@ class Api::V1::UsersController < ApplicationController
   def show
     # user = User.find_by(id: params[:id])
     render json: user
+    user_json = UserSerializer.new(user).serialized_json
+    render json: user_json
   end
 
   # def edit

@@ -1,6 +1,6 @@
 class MakerSerializer 
-  # < ActiveModel::Serializer
-  include FastJsonapi::ObjectSerializer
+  < ActiveModel::Serializer
+  # include FastJsonapi::ObjectSerializer
   attributes :id, :name
 
   # has_many :instruments
