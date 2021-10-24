@@ -3,9 +3,9 @@ class Api::V1::UsersController < ApplicationController
 
   def index
     users = User.all
-    # render json: users
-    users_json = UserSerializer.new(users).serialized_json
-    render json: users_json
+    render json: users
+    # users_json = UserSerializer.new(users).serialized_json
+    # render json: users_json
   end
 
   # def new
@@ -23,10 +23,10 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def show
-    # user = User.find_by(id: params[:id])
+    user = User.find_by(id: params[:id])
     render json: user
-    user_json = UserSerializer.new(user).serialized_json
-    render json: user_json
+    # user_json = UserSerializer.new(user).serialized_json
+    # render json: user_json
   end
 
   # def edit

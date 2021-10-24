@@ -1,5 +1,4 @@
-class MakerSerializer 
-  < ActiveModel::Serializer
+class MakerSerializer  < ActiveModel::Serializer
   # include FastJsonapi::ObjectSerializer
   attributes :id, :name
 

@@ -1,5 +1,4 @@
-class FamilySerializer 
-  < ActiveModel::Serializer
+class FamilySerializer  < ActiveModel::Serializer
   # include FastJsonapi::ObjectSerializer
   attributes :id, :name
 
